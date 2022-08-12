@@ -1,0 +1,50 @@
+package com.chess.engine.piece;
+import com.chess.engine.board.Board;
+import com.chess.engine.board.Move;
+
+import java.util.Collection;
+import java.util.List;
+
+import com.chess.engine.Alliance;
+
+public abstract class Piece {
+	protected final int piecePosition;//where is this piece located
+	protected final Alliance pieceAlliance;//white or black alliance p1 or p2
+	protected final boolean isFirstMove;
+	public Piece(final int piecePosition, final Alliance pieceAlliance) {
+		this.piecePosition = piecePosition;
+		this.pieceAlliance = pieceAlliance;
+		this.isFirstMove=false;
+	}
+	public Alliance getPieceAlliance() {
+		return this.pieceAlliance;
+	}
+	public boolean isFirstMove() {
+		return this.isFirstMove;
+	}
+	//all the legal moves the piece have
+	public abstract Collection<Move> calculateLegalMoves(final Board board);
+	//all types of pawn or piece will extend this class and override this method
+	//as moves are different for each video
+	
+	public int getPiecePosition() {
+		return this.piecePosition;
+	}
+	public enum PieceType{
+		PAWN("P"),
+		KNIGHT("K"),
+		BISHOP("B"),
+		ROOK("R"),
+		QUEEN("Q"),
+		KING("K");
+		private String pieceName;
+		PieceType(final String pieceName){
+			this.pieceName=pieceName;
+		}
+		@Override
+		public String toString() {
+			return this.pieceName;
+		}
+	}
+	
+}

@@ -1,0 +1,19 @@
+package com.chess.engine;
+
+//enums are used to define constants by default they are public static final ig
+public enum Alliance {
+	WHITE{
+		@Override
+		public int getDirection() {
+			return -1;
+		}
+	},
+	BLACK{
+		@Override
+		public int getDirection() {
+			return 1;
+		}
+	}
+	public abstract int getDirection();
+	
+}

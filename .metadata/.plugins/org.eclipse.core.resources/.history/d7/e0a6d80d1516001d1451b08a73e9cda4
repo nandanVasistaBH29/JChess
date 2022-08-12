@@ -1,0 +1,20 @@
+package com.chess.engine.player;
+
+import java.util.Collection;
+
+import com.chess.engine.board.Board;
+import com.chess.engine.board.Move;
+import com.chess.engine.piece.Piece;
+
+public class WhitePlayer extends Player{
+
+	public WhitePlayer(Board board, Collection<Move> legalMovesWhite, Collection<Move> legalMovesBlack) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	protected Collection<Piece> getActivePieces() {
+		return this.board.getWhitePieces();
+	}
+
+}

@@ -1,0 +1,8 @@
+package com.chess.engine.player;
+
+public class MoveTransition {
+	private final Board transitionBoard;
+	private final Move move;
+	private final MoveStatus moveStatus;
+	
+}
